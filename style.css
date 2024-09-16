@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .music-player {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .player {
+    width: 60%;
+    margin-right: 20px;
+  }
+  
+  h2, h3 {
+    margin-bottom: 15px;
+    color: #f39c12;
+  }
+  
+  /* Input and Controls */
+  #songInput {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  button.control-btn {
+    background-color: #f39c12;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5rem;
+  }
+  
+  button.control-btn:hover {
+    background-color: #e67e22;
+  }
+  
+  /* Audio Info */
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .volume-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .volume-control input {
+    margin-left: 10px;
+    width: 80%;
+  }
+  
+  /* Playlist */
+  .playlist {
+    width: 35%;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .playlist h3 {
+    margin-top: 0;
+  }
+  
+  #playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #playlist li {
+    background-color: #555;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #playlist li:hover {
+    background-color: #666;
+  }
+  
+  #playlist li.active {
+    background-color: #f39c12;
+  }
+  
+  #playlist li span {
+    flex-grow: 1;
+  }
+  
+  #playlist li button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding-left: 10px;
+  }
+  
+  #playlist li button:hover {
+    color: #e67e22;
+  }
+  
