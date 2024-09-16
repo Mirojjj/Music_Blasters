@@ -20,19 +20,23 @@ function loadSong(index) {
     audioPlayer.src = song.src;
     songTitleEl.innerHTML = `<marquee direction="right">${song.title}</marquee>`;
     isPlaying = false;
-    playBtn.innerHTML = "⏯️";
+    playBtn.innerHTML = "⏵";
   }
 }
 
 const onPlayBtnClick = () => {
-  if (isPlaying) {
-    audioPlayer.pause();
-    isPlaying = false;
-    playBtn.innerHTML = "⏯️";
+  if (playlist.length > 0) {
+    if (isPlaying) {
+      audioPlayer.pause();
+      isPlaying = false;
+      playBtn.innerHTML = "⏸";
+    } else {
+      audioPlayer.play();
+      isPlaying = true;
+      playBtn.innerHTML = "⏵";
+    }
   } else {
-    audioPlayer.play();
-    isPlaying = true;
-    playBtn.innerHTML = "⏸️";
+    alert("Add song first");
   }
 };
 
@@ -41,7 +45,7 @@ const onPrevBtnClick = () => {
   loadSong(currentSongIndex);
   audioPlayer.play();
   isPlaying = true;
-  playBtn.innerHTML = "⏸️";
+  playBtn.innerHTML = "⏸";
 };
 
 const onNextBtnClick = () => {
@@ -49,7 +53,7 @@ const onNextBtnClick = () => {
   loadSong(currentSongIndex);
   audioPlayer.play();
   isPlaying = true;
-  playBtn.innerText = "⏸️";
+  playBtn.innerText = "⏸";
 };
 
 const moveNextOnSongEnd = () => {
@@ -113,7 +117,7 @@ function addSongToPlaylist(song) {
     loadSong(currentSongIndex);
     audioPlayer.play();
     isPlaying = true;
-    playBtn.innerHTML("⏸️");
+    playBtn.innerHTML("⏸");
   });
   playlistEl.appendChild(li);
 }
@@ -139,5 +143,5 @@ audioPlayer.addEventListener("pause", () => {
 // Update play/pause button based on state
 function updatePlayPauseButton(playing) {
   isPlaying = playing;
-  playBtn.innerHTML = playing ? "⏸️" : "⏯️"; // Show play/pause icon
+  playBtn.innerHTML = playing ? "⏸" : "⏵"; // Show play/pause icon
 }
